@@ -46,6 +46,7 @@ class CalendarsController < ApplicationController
         today_plans.push(plan.plan) if plan.date == @todays_date + x
       end
 
+
       # wdayメソッドを用いて取得した数値
       wday_num = (@todays_date + x).wday
 
@@ -58,6 +59,7 @@ class CalendarsController < ApplicationController
       wday_value = wdays[wday_num]
 
       days = { :month => (@todays_date + x).month, :date => (@todays_date+x).day, :plans => today_plans,  :wday => wday_value }
+
       @week_days.push(days)
     end
 
